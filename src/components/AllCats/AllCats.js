@@ -1,15 +1,28 @@
-import "./AllCats.scss";
 import CatCard from "../CatCard/CatCard";
-import { useSelector } from "react-redux";
+import CardsContainer from "../CardsContainer/CardsContainer";
+import { useSelector, useDispatch } from "react-redux";
+import { addToFavorite } from "../../store/reducers/fetchCatsReducer";
 
 const AllCats = () => {
+    const dispatch = useDispatch();
     const { cats } = useSelector((state) => state.cats);
+
     return (
-        <div className="cards__container">
+        <CardsContainer>
             {cats.map((cat) => {
-                return <CatCard key={cat.id} url={cat.url} />;
+                console.log(cat);
+                return (
+                    <CatCard
+                        key={cat.id}
+                        id={cat.id}
+                        url={cat.url}
+                        onClick={() => {
+                            dispatch(addToFavorite(cat.id));
+                        }}
+                    />
+                );
             })}
-        </div>
+        </CardsContainer>
     );
 };
 

@@ -15,8 +15,19 @@ const catsReducer = createSlice({
     initialState: {
         loading: false,
         cats: [],
+        favorites: [],
     },
-    reducers: {},
+    reducers: {
+        addToFavorite(state, action) {
+            const cat = state.cats.find((cat) => cat.id === action.payload);
+            state.favorites.push(cat);
+        },
+        removeFromFavorite(state, action) {
+            state.favorites = state.favorites.filter(
+                (cat) => cat.id !== action.payload
+            );
+        },
+    },
     extraReducers: {
         [fetchCats.pending]: (state) => {
             state.loading = true;
@@ -27,5 +38,7 @@ const catsReducer = createSlice({
         },
     },
 });
+
+export const { addToFavorite, removeFromFavorite } = catsReducer.actions;
 
 export default catsReducer.reducer;
