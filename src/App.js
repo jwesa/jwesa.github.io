@@ -1,4 +1,4 @@
-import AppWrapper from "./components/AppWrapper/AppWrapper";
+import AppWrapper from "./containers/AppWrapper/AppWrapper";
 import AllCats from "./components/AllCats/AllCats";
 import FavoriteCats from "./components/FavoriteCats/FavoriteCats";
 

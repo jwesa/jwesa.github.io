@@ -1,5 +1,5 @@
 import CatCard from "../CatCard/CatCard";
-import CardsContainer from "../CardsContainer/CardsContainer";
+import CardsContainer from "../../containers/CardsContainer/CardsContainer";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromFavorite } from "../../store/reducers/fetchCatsReducer";
 
@@ -17,7 +17,7 @@ const FavoriteCats = () => {
                         url={item.url}
                         onClick={() => {
                             dispatch(removeFromFavorite(item.id));
-                        }}
+						}}
                     />
                 );
             })}

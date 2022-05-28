@@ -1,6 +1,7 @@
 import "./AppWrapper.scss";
-import Header from "../Header/Header";
+import Header from "../../components/Header/Header";
 import MainContent from "../MainContent/MainContent";
+
 import { Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TailSpin } from "react-loader-spinner";

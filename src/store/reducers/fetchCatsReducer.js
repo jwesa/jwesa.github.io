@@ -5,9 +5,7 @@ export const fetchCats = createAsyncThunk("cats/fetchCats", async () => {
     const response = await fetch(
         `https://api.thecatapi.com/v1/images/search?limit=15&mime_types=jpg,pn&api_key=${api_key}`
     );
-    const cats = await response.json();
-    console.log(cats);
-    return cats;
+    return await response.json();
 });
 
 const catsReducer = createSlice({
