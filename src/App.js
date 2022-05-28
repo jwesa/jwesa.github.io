@@ -47,7 +47,7 @@ function App() {
     return (
         <Routes>
             <Route path="/uchiru-test" element={<AppWrapper />}>
-                <Route index path="/uchiru-test/all" element={<AllCats />} />
+                <Route index path="/" element={<AllCats />} />
                 <Route path="/uchiru-test/favorites" element={<FavoriteCats />} />
             </Route>
         </Routes>
