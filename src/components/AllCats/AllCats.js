@@ -14,7 +14,8 @@ const AllCats = () => {
                     <CatCard
                         key={cat.id}
                         id={cat.id}
-                        url={cat.url}
+						url={cat.url}
+						liked={cat.liked}
                         onClick={() => {
                             dispatch(addToFavorite(cat.id));
                         }}

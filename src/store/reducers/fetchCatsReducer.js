@@ -8,7 +8,7 @@ export const fetchCats = createAsyncThunk("cats/fetchCats", async () => {
     return await response.json();
 });
 
-const catsReducer = createSlice({
+const catsSlice = createSlice({
     name: "cats",
     initialState: {
         loading: false,
@@ -18,9 +18,17 @@ const catsReducer = createSlice({
     reducers: {
         addToFavorite(state, action) {
             const cat = state.cats.find((cat) => cat.id === action.payload);
+            if (state.favorites.some((item) => item.id === cat.id)) {
+                return;
+            }
+            cat.liked = true;
             state.favorites.push(cat);
         },
         removeFromFavorite(state, action) {
+            const cat = state.cats.find(
+                (cat) => cat.id === action.payload
+            );
+            cat.liked = false;
             state.favorites = state.favorites.filter(
                 (cat) => cat.id !== action.payload
             );
@@ -32,11 +40,15 @@ const catsReducer = createSlice({
         },
         [fetchCats.fulfilled]: (state, action) => {
             state.cats = action.payload;
+            state.cats = state.cats.map((cat) => {
+                cat.liked = false;
+                return cat;
+            });
             state.loading = false;
         },
     },
 });
 
-export const { addToFavorite, removeFromFavorite } = catsReducer.actions;
+export const { addToFavorite, removeFromFavorite } = catsSlice.actions;
 
-export default catsReducer.reducer;
+export default catsSlice.reducer;

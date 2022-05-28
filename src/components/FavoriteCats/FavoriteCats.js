@@ -6,7 +6,7 @@ import { removeFromFavorite } from "../../store/reducers/fetchCatsReducer";
 const FavoriteCats = () => {
     const dispatch = useDispatch();
     const { favorites } = useSelector((state) => state.cats);
-
+	
     return (
         <CardsContainer>
             {favorites.map((item) => {
@@ -15,9 +15,10 @@ const FavoriteCats = () => {
                         key={item.id}
                         id={item.id}
                         url={item.url}
+                        liked={item.liked}
                         onClick={() => {
                             dispatch(removeFromFavorite(item.id));
-						}}
+                        }}
                     />
                 );
             })}
