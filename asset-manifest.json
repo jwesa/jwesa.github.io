@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/uchiru-test/static/css/main.f87c3281.css",
-    "main.js": "/uchiru-test/static/js/main.405e64b1.js",
+    "main.js": "/uchiru-test/static/js/main.83a2218e.js",
     "index.html": "/uchiru-test/index.html",
     "static/media/heart.svg": "/uchiru-test/static/media/heart.f1ecc7f974f7cea9b0846ea750cfe1d3.svg",
     "static/media/clickedHeart.svg": "/uchiru-test/static/media/clickedHeart.ef257381c629e730fab08eb3d50e945e.svg",
     "static/media/hoveredHeart.svg": "/uchiru-test/static/media/hoveredHeart.798a5c6a4d7f69959228a62c2e3eff7d.svg",
     "main.f87c3281.css.map": "/uchiru-test/static/css/main.f87c3281.css.map",
-    "main.405e64b1.js.map": "/uchiru-test/static/js/main.405e64b1.js.map"
+    "main.83a2218e.js.map": "/uchiru-test/static/js/main.83a2218e.js.map"
   },
   "entrypoints": [
     "static/css/main.f87c3281.css",
-    "static/js/main.405e64b1.js"
+    "static/js/main.83a2218e.js"
   ]
 }
