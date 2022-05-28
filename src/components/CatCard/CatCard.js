@@ -3,12 +3,6 @@ import heart from "../../assets/heart.svg";
 import hoveredHeart from "../../assets/hoveredHeart.svg";
 import clickedHeart from "../../assets/clickedHeart.svg";
 
-// import {
-//     hoverEnter,
-//     hoverLeave,
-//     setFavorite,
-// } from "../../store/reducers/heartStateReducer";
-import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 
 const CatCard = ({ id, url, liked, onClick }) => {
