@@ -10,7 +10,7 @@ export const fetchCats = createAsyncThunk("cats/fetchCats", async () => {
 
 export const loadMore = createAsyncThunk("cats/loadMore", async (page) => {
     const response = await fetch(
-        `https://api.thecatapi.com/v1/images/search?limit=10&page=${page}&mime_types=jpg,pn&api_key=${api_key}`
+        `https://api.thecatapi.com/v1/images/search?limit=2&page=${page}&mime_types=jpg,pn&api_key=${api_key}`
     );
     return await response.json();
 });
