@@ -58,7 +58,6 @@ const catsSlice = createSlice({
                 cat.liked = false;
                 return cat;
             });
-            console.log(state.newCats);
             state.cats = state.cats.concat(state.newCats);
         },
     },
