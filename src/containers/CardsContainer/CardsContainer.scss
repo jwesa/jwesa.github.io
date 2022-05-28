@@ -4,4 +4,7 @@
     flex-wrap: wrap;
     align-content: flex-start;
     padding: 40px 10px;
+    @media screen and (max-width: 583px) {
+        justify-content: center;
+    }
 }
