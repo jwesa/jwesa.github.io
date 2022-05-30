@@ -16,7 +16,7 @@ function App() {
         if (
             e.target.documentElement.scrollHeight -
                 (e.target.documentElement.scrollTop + window.innerHeight) <
-            120
+            80
         ) {
             setFetching(true);
             setPage(page + 1);
@@ -28,9 +28,9 @@ function App() {
     }, [dispatch]);
 
     useEffect(() => {
-        document.addEventListener("scroll", scrollHandler);
+        window.addEventListener("scroll", scrollHandler);
         return () => {
-            document.removeEventListener("scroll", scrollHandler);
+            window.removeEventListener("scroll", scrollHandler);
         };
     });
 
