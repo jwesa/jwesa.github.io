@@ -36,11 +36,9 @@ function App() {
 
     useEffect(() => {
         if (fetching) {
-            //debouncer
-            setTimeout(() => {
-                dispatch(loadMore(page));
-            }, 1000);
             setFetching(false);
+            dispatch(loadMore(page));
+            setTimeout(() => {}, 1500);
         }
     }, [dispatch, fetching, page]);
 

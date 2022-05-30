@@ -10,7 +10,7 @@ export const fetchCats = createAsyncThunk("cats/fetchCats", async () => {
 
 export const loadMore = createAsyncThunk("cats/loadMore", async (page) => {
     const response = await fetch(
-        `https://api.thecatapi.com/v1/images/search?limit=2&page=${page}&mime_types=jpg,pn&api_key=${api_key}`
+        `https://api.thecatapi.com/v1/images/search?limit=5&page=${page}&mime_types=jpg,pn&api_key=${api_key}`
     );
     return await response.json();
 });
@@ -19,6 +19,7 @@ const catsSlice = createSlice({
     name: "cats",
     initialState: {
         loading: false,
+        loadingMore: false,
         cats: [],
         newCats: [],
         favorites: [],
@@ -52,6 +53,9 @@ const catsSlice = createSlice({
             });
             state.loading = false;
         },
+        [loadMore.pending]: (state) => {
+            state.loadingMore = true;
+        },
         [loadMore.fulfilled]: (state, action) => {
             state.newCats = action.payload;
             state.newCats = state.newCats.map((cat) => {
@@ -59,6 +63,7 @@ const catsSlice = createSlice({
                 return cat;
             });
             state.cats = state.cats.concat(state.newCats);
+            state.loadingMore = false;
         },
     },
 });
