@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/uchiru-test/static/css/main.f6868393.css",
-    "main.js": "/uchiru-test/static/js/main.a8993830.js",
+    "main.css": "/uchiru-test/static/css/main.129624e9.css",
+    "main.js": "/uchiru-test/static/js/main.82eb7677.js",
     "index.html": "/uchiru-test/index.html",
     "static/media/heart.svg": "/uchiru-test/static/media/heart.f1ecc7f974f7cea9b0846ea750cfe1d3.svg",
     "static/media/clickedHeart.svg": "/uchiru-test/static/media/clickedHeart.ef257381c629e730fab08eb3d50e945e.svg",
     "static/media/hoveredHeart.svg": "/uchiru-test/static/media/hoveredHeart.798a5c6a4d7f69959228a62c2e3eff7d.svg",
-    "main.f6868393.css.map": "/uchiru-test/static/css/main.f6868393.css.map",
-    "main.a8993830.js.map": "/uchiru-test/static/js/main.a8993830.js.map"
+    "main.129624e9.css.map": "/uchiru-test/static/css/main.129624e9.css.map",
+    "main.82eb7677.js.map": "/uchiru-test/static/js/main.82eb7677.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6868393.css",
-    "static/js/main.a8993830.js"
+    "static/css/main.129624e9.css",
+    "static/js/main.82eb7677.js"
   ]
 }
