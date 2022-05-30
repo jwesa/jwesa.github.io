@@ -3,19 +3,19 @@ import AllCats from "./components/AllCats/AllCats";
 import FavoriteCats from "./components/FavoriteCats/FavoriteCats";
 
 import { Routes, Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "./hook";
 import { useEffect, useState } from "react";
-import { fetchCats, loadMore } from "./store/reducers/fetchCatsReducer";
+import { fetchCats, loadMore } from "./app/reducers/fetchCatsReducer";
 
-function App() {
-    const dispatch = useDispatch();
-    const [page, setPage] = useState(0);
-    const [fetching, setFetching] = useState(true);
+const App: React.FC = () => {
+    const dispatch = useAppDispatch();
+    const [page, setPage] = useState<number>(0);
+    const [fetching, setFetching] = useState<boolean>(true);
 
-    const scrollHandler = (e) => {
+    const scrollHandler = (): void => {
         if (
-            e.target.documentElement.scrollHeight -
-                (e.target.documentElement.scrollTop + window.innerHeight) <
+            document.documentElement.scrollHeight -
+                (document.documentElement.scrollTop + window.innerHeight) <
             80
         ) {
             setFetching(true);
@@ -28,9 +28,9 @@ function App() {
     }, [dispatch]);
 
     useEffect(() => {
-        window.addEventListener("scroll", scrollHandler);
+        document.addEventListener("scroll", scrollHandler);
         return () => {
-            window.removeEventListener("scroll", scrollHandler);
+            document.removeEventListener("scroll", scrollHandler);
         };
     });
 
@@ -45,7 +45,8 @@ function App() {
     return (
         <Routes>
             <Route path="/uchiru-test" element={<AppWrapper />}>
-                <Route index path="/uchiru-test/" element={<AllCats />} />
+                <Route index element={<AllCats />} />
+                <Route path="/uchiru-test/" element={<AllCats />} />
                 <Route
                     path="/uchiru-test/favorites"
                     element={<FavoriteCats />}
@@ -53,6 +54,6 @@ function App() {
             </Route>
         </Routes>
     );
-}
+};
 
 export default App;
