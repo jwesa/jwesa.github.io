@@ -1,7 +1,11 @@
-import './MainContent.scss'
+import "./MainContent.scss";
 import { Outlet } from "react-router-dom";
 
-const MainContent = () => {
+interface MainContentProps {
+    children: React.ReactElement;
+}
+
+const MainContent: React.FC<MainContentProps> = () => {
     return (
         <div className="main-content">
             <Outlet />

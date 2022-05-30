@@ -1,12 +1,12 @@
 import "./AllCats.scss";
 import CatCard from "../CatCard/CatCard";
 import CardsContainer from "../../containers/CardsContainer/CardsContainer";
-import { useSelector, useDispatch } from "react-redux";
-import { addToFavorite } from "../../store/reducers/fetchCatsReducer";
+import { useAppSelector, useAppDispatch } from "../../hook";
+import { addToFavorite } from "../../app/reducers/fetchCatsReducer";
 
-const AllCats = () => {
-    const dispatch = useDispatch();
-    const { cats, loadingMore } = useSelector((state) => state.cats);
+const AllCats: React.FC = () => {
+    const dispatch = useAppDispatch();
+    const { cats, loadingMore } = useAppSelector((state) => state.cats);
 
     return (
         <>
@@ -15,7 +15,6 @@ const AllCats = () => {
                     return (
                         <CatCard
                             key={cat.id}
-                            id={cat.id}
                             url={cat.url}
                             liked={cat.liked}
                             onClick={() => {
@@ -26,7 +25,9 @@ const AllCats = () => {
                 })}
             </CardsContainer>
             {loadingMore && (
-                <div className="loading__title">... загружаем еще котиков ...</div>
+                <div className="loading__title">
+                    ... загружаем еще котиков ...
+                </div>
             )}
         </>
     );
