@@ -1,13 +1,8 @@
-// const heart = require("../../assets/heart.svg") as string;
-// const hoveredHeart = require("../../assets/hoveredHeart.svg") as string;
-// const clickedHeart = require("../../assets/clickedHeart.svg") as string;
 import "./CatCard.scss";
-
-import { SetStateAction, useState } from "react";
-
 import heart from "../../assets/heart.svg";
 import hoveredHeart from "../../assets/hoveredHeart.svg";
 import clickedHeart from "../../assets/clickedHeart.svg";
+import { SetStateAction, useState } from "react";
 
 interface CatCardProps {
     url: string | undefined;

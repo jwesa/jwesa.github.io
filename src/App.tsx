@@ -8,11 +8,12 @@ import { useEffect, useState } from "react";
 import { fetchCats, loadMore } from "./app/reducers/fetchCatsReducer";
 
 const App: React.FC = () => {
-    const dispatch = useAppDispatch();
+	const dispatch = useAppDispatch();
+	
     const [page, setPage] = useState<number>(0);
     const [fetching, setFetching] = useState<boolean>(true);
 
-    const scrollHandler = (): void => {
+    const scrollHandler = () => {
         if (
             document.documentElement.scrollHeight -
                 (document.documentElement.scrollTop + window.innerHeight) <
