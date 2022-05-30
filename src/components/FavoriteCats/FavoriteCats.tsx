@@ -16,8 +16,9 @@ const FavoriteCats: React.FC = () => {
         <CardsContainer>
             {favorites.map((item) => {
                 return (
-                    <CatCard
-                        key={item.id}
+					<CatCard
+						// чтобы ключ отличался от ключа в AllCats
+                        key={item.id + item.url}
                         url={item.url}
                         liked={item.liked}
                         onClick={() => {
