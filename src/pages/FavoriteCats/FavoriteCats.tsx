@@ -1,5 +1,5 @@
-import CatCard from "../CatCard/CatCard";
-import CardsContainer from "../../containers/CardsContainer/CardsContainer";
+import CatCard from "../../components/CatCard/CatCard";
+import CardsContainer from "../../components/CardsContainer/CardsContainer";
 import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../../hook";
 import { removeFromFavorite } from "../../app/reducers/fetchCatsReducer";

@@ -1,6 +1,6 @@
 import "./AllCats.scss";
-import CatCard from "../CatCard/CatCard";
-import CardsContainer from "../../containers/CardsContainer/CardsContainer";
+import CatCard from "../../components/CatCard/CatCard";
+import CardsContainer from "../../components/CardsContainer/CardsContainer";
 import { useAppSelector, useAppDispatch } from "../../hook";
 import { addToFavorite } from "../../app/reducers/fetchCatsReducer";
 

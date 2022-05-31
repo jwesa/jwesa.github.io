@@ -1,6 +1,6 @@
 import AppWrapper from "./containers/AppWrapper/AppWrapper";
-import AllCats from "./components/AllCats/AllCats";
-import FavoriteCats from "./components/FavoriteCats/FavoriteCats";
+import AllCats from "./pages/AllCats/AllCats";
+import FavoriteCats from "./pages/FavoriteCats/FavoriteCats";
 
 import { Routes, Route } from "react-router-dom";
 import { useAppDispatch } from "./hook";
