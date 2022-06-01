@@ -21,7 +21,7 @@ const CatCard: React.FC<CatCardProps> = ({ url, liked, onClick }) => {
 
     return (
         <div className="cat-card">
-            <img className="cat-card__image" src={url} alt="Cat img" />
+            <img className="cat-card__image" src={url} alt="Cat" />
             <img
                 src={like}
                 alt="Heart img"

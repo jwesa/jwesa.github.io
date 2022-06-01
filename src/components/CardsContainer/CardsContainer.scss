@@ -3,10 +3,9 @@
     padding: 40px 10px 20px 10px;
     display: grid;
     justify-content: space-between;
-    grid-template-columns: repeat(auto-fill, 200px);
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, 220px);
 
-    @media screen and (max-width: 763px) {
+    @media screen and (max-width: 782px) {
         grid-template-columns: 1fr 1fr;
         justify-items: center;
     }
